@@ -23,13 +23,7 @@ export interface Notification {
 }
 
 export type CreateNotification = {
-  (options: {
-    type?: string;
-    title?: string;
-    message?: string;
-    autoClose?: boolean;
-    duration?: number;
-  }): void;
+  (options: Partial<Omit<Notification,'id'>>): void;
 };
 
 const defaultNotificationOptions = {
